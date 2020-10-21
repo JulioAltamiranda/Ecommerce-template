@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Work Sans',Arial;
+}
+button,input{
+    outline: none;
+}
+.btn-menu{
+    display: none;
+}
+.section-title{
+    @include title;   
+}
+.container{
+    padding: $padding;
+    @media screen and (max-width:1220px){
+        padding:0 40px;
+    }
+    @media screen and (max-width:972px){
+        padding: 0 16px;
+    }
+}

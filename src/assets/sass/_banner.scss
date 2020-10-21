@@ -1,0 +1,85 @@
+.hooper{
+    outline: none!important;
+    min-height: 400px;
+    max-height: 400px;
+    width: 100%;
+    .hooper-prev{
+        background: $blue2; 
+        transition: .3s;
+        opacity: 0;
+        &:hover{
+            background: $blue3; 
+        }
+    }
+    .hooper-next{
+        background: $blue2; 
+        transition: .3s;
+        opacity: 0;
+        &:hover{
+            background: $blue3; 
+        }
+    }
+    &:hover .hooper-list .hooper-prev, &:hover .hooper-list .hooper-next{
+        opacity: 1;
+        
+    }
+}
+
+.slide1{
+    max-height:100%;
+    min-height:100%;
+    width: 100%;
+    background:url(../img/1.jpg);
+    background-size: cover;
+    background-position: 50%;
+    
+}
+.slide2{
+    max-height: 100%;
+    min-height: 100%;
+    width: 100%;
+    background:url(../img/2.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.banner-text{
+    position: absolute;
+    width: 50%;
+    top: 0;
+    margin-top: 50px;
+    h2{
+        color: #333;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 50px;
+    }
+    p{
+        color: #333;
+        font-size: 14px;
+        margin: 12px 0 20px 0;
+    }
+    p:nth-child(1){
+        letter-spacing: 4px;
+        border-bottom: 3px solid $yellow;
+        text-transform: uppercase;
+        white-space: nowrap;
+        width: 124px;
+    }
+    .banner-button{
+        background: $yellow;
+        display: flex;
+        align-items: center;
+        padding:9px 0 9px 0;
+        width: 110px;
+        justify-content: center;
+    }
+    a{
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: bold;
+        margin-right: 5px;
+        color: #333;
+    }
+}
