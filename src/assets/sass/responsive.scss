@@ -133,7 +133,7 @@
     .navbar{
         background: rgb(50, 60, 92);
     }
-    .navbar ul{
+    .navbar > ul{
         display: flex;
         flex-direction: column;
     }
@@ -180,7 +180,7 @@
         h4{
             font-size: 15px;
         }
-        p{
+        a{
             color: #e5e5e5;
         }
     }
