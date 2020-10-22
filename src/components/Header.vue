@@ -169,28 +169,37 @@
 <script>
 export default {
     mounted(){
-        var btnMenu=document.querySelector('.btn-menu')
-        var menu=document.querySelector('.desktop-menu')
-        btnMenu.addEventListener('click',function(){
-            menu.classList.toggle('active')
-        })
-        var links=document.getElementsByClassName('categories-links')
-        for(let i=0;i<links.length;i++){
-            links[i].addEventListener('click',()=>{
-                var submenu=links[i].nextElementSibling;
-                var btnIcon=links[i].children[1];
-                btnIcon.classList.toggle('active')
-                submenu.classList.toggle('active')
+        this.slideToggleMenu()
+        this.stickyMenu()
+    },
+    methods:{
+        slideToggleMenu(){
+            var btnMenu=document.querySelector('.btn-menu')
+            var menu=document.querySelector('.desktop-menu')
+
+            btnMenu.addEventListener('click',()=>{
+                menu.classList.toggle('active')
+            })
+            var links=document.getElementsByClassName('categories-links')
+            for(let i=0;i<links.length;i++){
+                links[i].addEventListener('click',()=>{
+                    var submenu=links[i].nextElementSibling;
+                    var btnIcon=links[i].children[1];
+                    btnIcon.classList.toggle('active')
+                    submenu.classList.toggle('active')
+                })
+            }
+        },
+        stickyMenu(){
+            window.addEventListener('scroll',()=>{
+                var header=document.querySelector('header')
+                if(window.pageYOffset>3 && window.innerWidth<=739){
+                    header.classList.add('sticky')
+                }else{
+                    header.classList.remove('sticky')
+                }
             })
         }
-        window.addEventListener('scroll',function(){
-            var header=document.querySelector('header')
-            if(window.pageYOffset>3 && window.innerWidth<=739){
-                header.classList.add('sticky')
-            }else{
-                header.classList.remove('sticky')
-            }
-        })
     }
 }
 </script>
