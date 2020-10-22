@@ -1,5 +1,5 @@
 <template>
-  <master>
+  <master :show="show">
     <template slot="header">
       <headerComponent/>
     </template>
@@ -24,18 +24,21 @@ export default {
     headerComponent,
     mainComponent,
     footerComponent
+  },
+  data(){
+    return{
+      show:true
+    }
+  },
+  mounted(){
+    window.addEventListener('load',this.loading)
+  },
+  methods:{
+    loading(){
+      this.show=false
+    }
   }
  
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
